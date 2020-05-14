@@ -8,13 +8,18 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import pl.jaceksysiak.hibernate.demo.entity.Course;
+import pl.jaceksysiak.hibernate.demo.entity.Student;
 import pl.jaceksysiak.hibernate.demo.repository.CourseRepository;
+import pl.jaceksysiak.hibernate.demo.repository.StudentRepository;
 
 @SpringBootApplication
 public class DemoApplication implements CommandLineRunner {
 	
 	@Autowired
-	CourseRepository repository;
+	CourseRepository courseRepository;
+	
+	@Autowired
+	StudentRepository studentRepository;
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -25,16 +30,18 @@ public class DemoApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		/*
-		Course course = repository.findById(10001L);
+		Course course = courseRepository.findById(10001L);
 		
 		logger.info("Course 10001L -> {}", course);
 		
-		repository.save(new Course("Microservices in 100 Steps"));
+		courseRepository.save(new Course("Microservices in 100 Steps"));
 		
-	// komentuje, żeby nie usuwało mi tego rekordu	repository.deleteById(10001L);
-*/
+	   // komentuje, żeby nie usuwało mi tego rekordu	courseRepository.deleteById(10001L);
+       */
 		
-	//	repository.playWithEntityManager();
+	   //	courseRepository.playWithEntityManager();
+		
+		studentRepository.saveStudentWithPassport();
 		
 	}
 }
