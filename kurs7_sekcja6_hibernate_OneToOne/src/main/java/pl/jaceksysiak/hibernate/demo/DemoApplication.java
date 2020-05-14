@@ -34,7 +34,7 @@ public class DemoApplication implements CommandLineRunner {
 	// komentuje, żeby nie usuwało mi tego rekordu	repository.deleteById(10001L);
 */
 		
-		repository.playWithEntityManager();
+	//	repository.playWithEntityManager();
 		
 	}
 }
