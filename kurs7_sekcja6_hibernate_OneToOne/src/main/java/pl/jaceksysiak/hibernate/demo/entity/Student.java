@@ -16,7 +16,7 @@ public class Student {
 	@Column(nullable = false)
 	private String name;
 	
-	@OneToOne
+	//@OneToOne
 	private Passport passport;
 
 	protected Student() {
