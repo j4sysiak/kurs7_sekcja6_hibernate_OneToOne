@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import pl.jaceksysiak.hibernate.demo.entity.Passport;
 import pl.jaceksysiak.hibernate.demo.entity.Student;
 import pl.jaceksysiak.hibernate.demo.repository.StudentRepository;
 
@@ -46,5 +47,13 @@ public class StudentRepositoryTest {
 		Student student = em.find(Student.class, 20001L);
 		logger.info("student -> {}", student);
 		logger.info("passport -> {}", student.getPassport());
+	}
+	
+	@Test
+	@Transactional
+	public void retrievePassportAndAssociatedStudent() {
+		Passport passport = em.find(Passport.class, 40001L);
+		logger.info("passport -> {}", passport);
+		logger.info("student -> {}", passport.getStudent());
 	}
 }
