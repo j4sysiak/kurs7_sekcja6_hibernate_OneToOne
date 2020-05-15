@@ -34,6 +34,7 @@ public class StudentRepositoryTest {
 	//Transaction
 	
 	@Test
+	//@Transactional  //Persistence Context
 	public void someTest() {
 		repository.someOperationToUnderstandPersistenceContext();
 	}
